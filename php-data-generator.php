@@ -1,5 +1,9 @@
 <?php
 
+/* Config */
+define(__TOPICS__, 18);
+define(__SUBS__, 10);
+
 /* DATA GENERATION */
 
 function generate_topics($subs) {
@@ -49,7 +53,7 @@ function parse_data($val) {
 }
 
 function generate_html() {
-  return implode( "", ["<ul>", implode("", array_map( "parse_data", get_data(18, 10) ) ), "</ul>"] );
+  return implode( "", ["<ul>", implode("", array_map( "parse_data", get_data(__TOPICS__, __SUBS__) ) ), "</ul>"] );
 }
 
 
